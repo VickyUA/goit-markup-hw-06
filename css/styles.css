@@ -18,14 +18,21 @@
   | Reset
   |============================
 */
-h1,h2,h3,h4,h5,h6,p {
+h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
-ul {
-    margin: 0;
-    padding: 0;
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.link {
+    text-decoration: none;
 }
 
+.list {
+    list-style: none;
+}
 /**
   |============================
   | Common styles
@@ -34,13 +41,7 @@ ul {
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--text);
-    line-height: 1.5;
     background-color: var(--white-background);
-}
-.container {
-    width: 1158px;
-    margin: 0 auto;
-    padding: 0 15px;
 }
 
 img {
@@ -56,12 +57,36 @@ height: 1px;
 margin: -1px;
 border: 0;
 padding: 0;
-
 white-space: nowrap;
 clip-path: inset(100%);
 clip: rect(0 0 0 0);
 overflow: hidden;
 }
+
+
+.container {
+    min-width: 320px;
+    max-width: 428px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        padding: 0 16px;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+    .container {
+        width: 1158px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+
+
 
 /**
   |============================
@@ -97,13 +122,6 @@ overflow: hidden;
 }
 .logo-color {
     color: var(--dark);
-}
-.link {
-    text-decoration: none;
-}
-
-.list {
-    list-style: none;
 }
 .header-list {
     display: flex;
@@ -227,9 +245,95 @@ overflow: hidden;
 .section {}
 
 .benefits {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding: 96px 0;
 }
+.benefits-item-title {
+    font-size: 36px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.11;
+    letter-spacing: 0.72px;
+    color: var(--dark);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1158px) {
+.benefits {
+        padding: 120px 0;
+    }
+
+    .benefits-item-title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: var(--dark);
+        margin-bottom: 8px;
+        }
+
+    .benefits-text {
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 500;
+        letter-spacing: 0.32px;
+        }
+}
+
+@media only screen and (max-width: 1157px) {
+    .benefits-list-icon {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .benefits-list-item:not(:last-child) {
+        margin-bottom: 72px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+.benefits-list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 72px;
+    }
+
+    .benefits-list-item {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+
+}
+
+@media only screen and (min-width: 1158px) {
+    .benefits-list {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 24px;
+        }
+
+    .benefits-list-item {
+        flex-basis: calc((100% - 72px) / 4);
+        }
+
+    .benefits-list-icon {
+        display: inline-block;
+    }
+    
+    .benefits-icon-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 264px;
+        height: 112px;
+        border-radius: 4px;
+        background-color: var(--light);
+        margin-bottom: 8px;
+        }
+
+
+} 
 
 .benefits-title {
     line-height: 1.2;
@@ -237,41 +341,6 @@ overflow: hidden;
     color: var(--dark);
 }
 
-.benefits-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-}
-
-.benefits-list-item {
-    width: 264px;
-}
-
-.benefits-icon-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 264px;
-    height: 112px;
-    border-radius: 4px;
-    background: var(--light);
-    margin-bottom: 8px;
-}
-
-.benefits-list-icon {}
-
-.benefits-item-title {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: var(--dark);
-    margin-bottom: 8px;
-}
-.benefits-text {
-    letter-spacing: 0.02em;
-    width: 264px;
-}
 
 /**
   |============================
