@@ -1,0 +1,9 @@
+{
+  "zenMode.hideTabs": false,
+  "screencastMode.hideSingleEditorCursorMoves": true
+},
+
+{
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false
+}
